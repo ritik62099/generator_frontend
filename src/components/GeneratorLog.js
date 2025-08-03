@@ -18,7 +18,7 @@ function GeneratorLog() {
 
   const fetchReadings = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/readings?month=${month}`);
+      const res = await axios.get(`https://generator-backend-ykgr.onrender.com/readings?month=${month}`);
       const map = {};
       res.data.forEach((r) => {
         map[r.date] = r;
@@ -49,7 +49,7 @@ function GeneratorLog() {
     ) return;
 
     try {
-      await axios.post('http://localhost:5000/readings', {
+      await axios.post('https://generator-backend-ykgr.onrender.com/readings', {
         date,
         openingHour: r.openingHour,
         openingMinute: r.openingMinute,
@@ -76,7 +76,7 @@ function GeneratorLog() {
       },
     }));
 
-    setTimeout(() => handleSave(date), 100); // Ensure state is updated before saving
+    setTimeout(() => handleSave(date), 100);
   };
 
   const calculateUsage = (r) => {
