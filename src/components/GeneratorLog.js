@@ -23,7 +23,7 @@ function GeneratorLog() {
 
   const fetchReadings = async () => {
     try {
-      const res = await axios.get(`https://vercel.com/ritik-kumars-projects-b32ce75c/generator-backend/readings?month=${month}`);
+      const res = await axios.get(`https://generator-backend.vercel.app/readings?month=${month}`);
       const map = {};
       res.data.forEach((r) => {
         map[r.date] = r;
@@ -56,7 +56,7 @@ function GeneratorLog() {
     ) return;
 
     try {
-      await axios.post('https://vercel.com/ritik-kumars-projects-b32ce75c/generator-backend/readings', {
+      await axios.post('https://generator-backend.vercel.app/readings', {
         date,
         openingHour: r.openingHour,
         openingMinute: r.openingMinute,
